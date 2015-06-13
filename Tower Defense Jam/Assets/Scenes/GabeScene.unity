@@ -275,7 +275,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1451873014}
-  - {fileID: 1925613197}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!114 &739308928
@@ -609,8 +608,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  minSize: 4
-  maxSize: 20
+  moveOffset: 5
+  zoomSpeed: 1
+  minZoom: 4
+  maxZoom: 20
+  zoomSmoothTime: .300000012
 --- !u!1 &1311295209
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1311295210
 Transform:
   m_ObjectHideFlags: 0
@@ -1238,7 +1240,7 @@ GameObject:
   - 33: {fileID: 1780808787}
   - 23: {fileID: 1780808786}
   m_Layer: 0
-  m_Name: PowerTower
+  m_Name: AoeTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1266,7 +1268,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea22f6be911504aafa7bb3732f534809, type: 2}
+  - {fileID: 2100000, guid: 1675a6cee63e649fbac181c08fa4cc22, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1360,33 +1362,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1925613196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1925613197}
-  m_Layer: 0
-  m_Name: FiringPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1925613197
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925613196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .800000012, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 739308927}
-  m_RootOrder: 1
 --- !u!1 &1930540299
 GameObject:
   m_ObjectHideFlags: 0
