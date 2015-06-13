@@ -64,7 +64,7 @@ namespace Music {
 
 		//Stop all tracks in a particular group OR stop all tracks in all groups EXCEPT the defined group
 		public void StopAudioGroup (string group, float delay, bool stopAllExceptDefinedGroup) {
-			StartCoroutine (StopAudioGroup (group, delay, stopAllExceptDefinedGroup));
+			StartCoroutine (StopAudioLoop (group, delay, stopAllExceptDefinedGroup));
 		}
 
 		IEnumerator StopAudioLoop (string group, float delay, bool stopAllExceptDefinedGroup) {
