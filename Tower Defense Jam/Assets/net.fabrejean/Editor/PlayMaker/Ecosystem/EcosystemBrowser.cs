@@ -147,7 +147,7 @@ namespace Net.FabreJean.PlayMaker.Ecosystem
 
 			Instance.position = new Rect(100,100, 430,500);
 			Instance.minSize = new Vector2(430,500);
-			Instance.title = "Ecosystem";
+			Instance.titleContent.text = "Ecosystem";
 
 
 			// init static vars
