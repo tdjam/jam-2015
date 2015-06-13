@@ -12,14 +12,14 @@ namespace dt {
         public float maxZoom = 20f;
         public float zoomSmoothTime = 0.3f;
 
-        Camera camera;
+        Camera cameraComponent;
         Vector3 movement;
         float targetZoom;
         float zoomVelocity = 0f;
 
         void Start() {
-            camera = GetComponent<Camera>();
-            targetZoom = camera.orthographicSize;
+            cameraComponent = GetComponent<Camera>();
+            targetZoom = cameraComponent.orthographicSize;
         }
 
         void Update() {
@@ -55,9 +55,9 @@ namespace dt {
                 targetZoom += zoomSpeed;
             }
             float newZoom = Mathf.SmoothDamp(
-                    camera.orthographicSize, targetZoom, ref zoomVelocity,
-                    zoomSmoothTime);
-            camera.orthographicSize = newZoom;
+                    cameraComponent.orthographicSize, targetZoom,
+                    ref zoomVelocity, zoomSmoothTime);
+            cameraComponent.orthographicSize = newZoom;
         }
     }
 }
