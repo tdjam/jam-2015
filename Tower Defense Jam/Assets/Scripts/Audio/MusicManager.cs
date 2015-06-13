@@ -92,7 +92,7 @@ namespace Music {
 		}
 
 		//Allows you to stop an individual track
-		public void PlayTrack(string track) {
+		public void StopTrack(string track) {
 			this.transform.FindChild(track).gameObject.GetComponent<AudioSource>().Stop();
 		}
 
