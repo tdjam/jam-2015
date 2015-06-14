@@ -4,6 +4,8 @@ using System.Collections;
 namespace dt {
     public class CameraController : MonoBehaviour {
 
+        public GameObject levelBoundary;
+
         public float moveSpeed = 1f;
         public uint moveOffset = 5;
 
@@ -13,7 +15,6 @@ namespace dt {
         public float zoomSmoothTime = 0.3f;
 
         Camera cameraComponent;
-        Vector3 movement;
         float targetZoom;
         float zoomVelocity = 0f;
 
@@ -23,16 +24,22 @@ namespace dt {
         }
 
         void Update() {
-            // Move the camera with the keyboard.
+            transform.position += KeyboardMove();
+            transform.position += MouseMove();
+            // TODO: Clamp the movement to levelBoundary.
+            MouseWheelZoom();
+        }
+
+        Vector3 KeyboardMove() {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
 
-            movement.Set(h, 0f, v);
-            movement = movement.normalized * moveSpeed * Time.deltaTime;
-            transform.position += movement;
+            var movement = new Vector3(h, 0f, v);
+            return movement.normalized * moveSpeed * Time.deltaTime;
+        }
 
-            // Move the camera with the mouse.
-            movement.Set(0, 0, 0);
+        Vector3 MouseMove() {
+            var movement = new Vector3(0, 0, 0);
             Vector3 mousePosition = Input.mousePosition;
             if ((int) mousePosition.x < moveOffset) {
                 movement.x -= 1f;
@@ -44,10 +51,10 @@ namespace dt {
             } else if ((int) mousePosition.y > Screen.height - moveOffset) {
                 movement.y += 1f;
             }
-            movement = movement.normalized * moveSpeed * Time.deltaTime;
-            transform.position += movement;
+            return movement.normalized * moveSpeed * Time.deltaTime;
+        }
 
-            // Zoom the camera with the mouse wheel.
+        void MouseWheelZoom() {
             float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
             if (mouseScroll > 0 && targetZoom > minZoom) {
                 targetZoom -= zoomSpeed;
