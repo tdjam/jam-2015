@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2333126}
   - 195: {fileID: 19543498}
   - 114: {fileID: 11401492}
+  - 114: {fileID: 11432692}
   m_Layer: 0
   m_Name: EnemyPrototype
   m_TagString: Untagged
@@ -75,6 +76,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endThreshold: 1
+--- !u!114 &11432692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19f0f0acb1e6456284275b0d57c2d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    health: 20
+    healthRegen: 0
+    defense: 0
+    immortal: 0
+    invulnerable: 0
+  combat:
+    attackDamage: 10
+    attackable: 1
+    targetable: 1
 --- !u!136 &13682078
 CapsuleCollider:
   m_ObjectHideFlags: 1
