@@ -67,8 +67,6 @@ namespace Level {
 			while (spawnerCompleteCount < lv.spawners.Count) {
 				yield return new WaitForSeconds(3f);
 
-				Debug.Log("Spawner check");
-
 				spawnerCompleteCount = 0;
 				foreach (Spawner spawner in lv.spawners) {
 					if (spawner.IsComplete()) spawnerCompleteCount += 1;
@@ -82,34 +80,31 @@ namespace Level {
 
 			waveComplete = true;
 			currentLevel += 1;
-
-			Debug.Log("Wave complete");
 		}
 
 		public IEnumerator RunSpawner (List<Wave> waveQueue, Spawner spawner) {
-			Debug.Log("Spawner running");
-
 			Wave wave;
 			while (spawner.waveCount < waveQueue.Count) {
 				// Get the next wave
 				wave = waveQueue[spawner.waveCount];
-				
+				wave.repeatCount = 0;
+
 				// Run the wave until it is done repeating
 				while (!wave.IsComplete()) {
-					
+
 					// Spawn units
 					foreach (Unit unit in wave.squad) {
+
+						GameObject origin = GetStartPoint(wave.spawnPoint);
 						GameObject destination = GetEndPoint(unit.destination);
 
-						GameObject newUnit = Object.Instantiate(Sm.level.GetUnit(unit.type), destination.transform.position, Quaternion.identity) as GameObject;
+						GameObject newUnit = Object.Instantiate(Sm.level.GetUnit(unit.type), origin.transform.position, Quaternion.identity) as GameObject;
 						newUnit.transform.SetParent(enemyParent);
 
 						// @TODO Sets the destination, but this is a horrible way of doing it
-						HutongGames.PlayMaker.FsmGameObject fsmTarget = newUnit.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("destination").Value;
+						HutongGames.PlayMaker.FsmGameObject fsmTarget = newUnit.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("destination");
 						if (fsmTarget != null) fsmTarget.Value = destination;
 
-						Debug.Log("Unit spawned");
-						
 						yield return new WaitForSeconds(unit.spawnDelay);
 					}
 					

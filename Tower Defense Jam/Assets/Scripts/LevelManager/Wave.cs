@@ -9,14 +9,14 @@ namespace Level {
 
 		[Tooltip("How many times should this wave repeat")]
 		public int repeatTotal;
-		[HideInInspector] public int repeatCount; // Internal repeat counter
+		[HideInInspector] public int repeatCount = 0; // Internal repeat counter
 
 		[Range(0f, 10f)] public float repeatDelay = 3f;
 
 		public List<Unit> squad;
 
 		public bool IsComplete () {
-			return repeatCount == repeatTotal;
+			return repeatCount == repeatTotal + 1;
 		}
 	}
 }
