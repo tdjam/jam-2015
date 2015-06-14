@@ -24,8 +24,8 @@ namespace dt {
         }
 
         void Update() {
-            transform.position += KeyboardMove();
-            transform.position += MouseMove();
+            transform.localPosition += KeyboardMove() * cameraComponent.orthographicSize;
+            transform.localPosition += MouseMove() * cameraComponent.orthographicSize;
             // TODO: Clamp the movement to levelBoundary.
             MouseWheelZoom();
         }
@@ -47,9 +47,9 @@ namespace dt {
                 movement.x += 1f;
             }
             if ((int) mousePosition.y < moveOffset) {
-                movement.y -= 1f;
+                movement.z -= 1f;
             } else if ((int) mousePosition.y > Screen.height - moveOffset) {
-                movement.y += 1f;
+                movement.z += 1f;
             }
             return movement.normalized * moveSpeed * Time.deltaTime;
         }
