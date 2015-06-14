@@ -370,6 +370,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 507138379}
+  - 95: {fileID: 507138380}
   m_Layer: 0
   m_Name: 'Enemy '
   m_TagString: Untagged
@@ -390,6 +391,23 @@ Transform:
   - {fileID: 1565901205}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!95 &507138380
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 507138378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7024107d18879f4fbce7e0710065c1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &569961037
 GameObject:
   m_ObjectHideFlags: 0
