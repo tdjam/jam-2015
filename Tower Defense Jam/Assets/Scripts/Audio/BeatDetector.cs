@@ -54,13 +54,13 @@ public class BeatDetector : MonoBehaviour {
 			StartCoroutine (ChangeColor ());
 		}
 		
-		Debug.Log ("Avg local: " + E);
-		Debug.Log ("Instant: " + e);
-		Debug.Log ("History Buffer: " + historybuffer());
-		Debug.Log ("sum Variance: " + sumV);
-		Debug.Log ("Variance: " + V);
-		Debug.Log ("Constant: " + constant);
-		Debug.Log ("--------");
+//		Debug.Log ("Avg local: " + E);
+//		Debug.Log ("Instant: " + e);
+//		Debug.Log ("History Buffer: " + historybuffer());
+//		Debug.Log ("sum Variance: " + sumV);
+//		Debug.Log ("Variance: " + V);
+//		Debug.Log ("Constant: " + constant);
+//		Debug.Log ("--------");
 	}
 	
 	float sumStereo(float[] channel1, float[] channel2) {
