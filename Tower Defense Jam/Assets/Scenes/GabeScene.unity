@@ -255,7 +255,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 739308927}
-  - 65: {fileID: 739308929}
   - 114: {fileID: 739308928}
   m_Layer: 0
   m_Name: AoeTower
@@ -263,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &739308927
 Transform:
   m_ObjectHideFlags: 0
@@ -271,12 +270,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 739308926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: .511621475, z: 2.94000006}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1451873014}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1201338368}
+  m_RootOrder: 1
 --- !u!114 &739308928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,15 +290,15 @@ MonoBehaviour:
   fsm:
     usedInTemplate: {fileID: 0}
     name: AoeTower
-    startState: Attack
+    startState: Wait
     states:
     - name: Attack
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 100
+        x: 65
+        y: 222
         width: 100
         height: 32
       isBreakpoint: 0
@@ -327,10 +326,10 @@ MonoBehaviour:
         actionHashCodes: ac65eef1eec9d968
         unityObjectParams: []
         fsmGameObjectParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: aoeObject
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: {fileID: 120980, guid: 866d78351d74e495faa1cf0f9f341c2d, type: 2}
         - useVariable: 0
@@ -412,8 +411,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 56.8671875
-        y: 226
+        x: 60.8671875
+        y: 107.9375
         width: 100
         height: 32
       isBreakpoint: 0
@@ -482,7 +481,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: aoeObject
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 120980, guid: 866d78351d74e495faa1cf0f9f341c2d, type: 2}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -498,18 +503,6 @@ MonoBehaviour:
     StepFrame: 0
     activeStateName: 
   fsmTemplate: {fileID: 0}
---- !u!65 &739308929
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 739308926}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &860938897
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +606,63 @@ MonoBehaviour:
   minZoom: 4
   maxZoom: 20
   zoomSmoothTime: .300000012
+--- !u!1 &1201338367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1201338368}
+  - 65: {fileID: 1201338370}
+  - 114: {fileID: 1201338371}
+  m_Layer: 0
+  m_Name: Tower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201338368
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201338367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .660000026, y: .5, z: -.300000012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1311295210}
+  - {fileID: 739308927}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!65 &1201338370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201338367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1201338371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201338367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3705ef53e088499dbf8979f4d042371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers:
+  - {fileID: 1311295209}
+  - {fileID: 739308926}
 --- !u!1 &1311295209
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +671,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1311295210}
-  - 65: {fileID: 1311295212}
   - 114: {fileID: 1311295211}
   m_Layer: 0
   m_Name: PowerTower
@@ -629,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1311295210
 Transform:
   m_ObjectHideFlags: 0
@@ -637,13 +686,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1311295209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .746898651, y: .511621475, z: -.949999988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1472986315}
   - {fileID: 417642384}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1201338368}
+  m_RootOrder: 0
 --- !u!114 &1311295211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,15 +707,15 @@ MonoBehaviour:
   fsm:
     usedInTemplate: {fileID: 0}
     name: PowerTower
-    startState: Find Enemy
+    startState: Wait
     states:
     - name: Find Enemy
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 290
-        y: 100
+        x: 305
+        y: 215
         width: 100
         height: 48
       isBreakpoint: 0
@@ -773,8 +822,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 63
-        y: 158
+        x: 59
+        y: 219
         width: 124
         height: 48
       isBreakpoint: 0
@@ -839,8 +888,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 545
-        y: 176
+        x: 302
+        y: 114
         width: 100
         height: 32
       isBreakpoint: 0
@@ -893,8 +942,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 80
-        y: 315
+        x: 296
+        y: 411
         width: 116
         height: 32
       isBreakpoint: 0
@@ -1114,18 +1163,6 @@ MonoBehaviour:
     StepFrame: 0
     activeStateName: 
   fsmTemplate: {fileID: 0}
---- !u!65 &1311295212
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1311295209}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1451873013
 GameObject:
   m_ObjectHideFlags: 0
