@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class ToggleTower : MonoBehaviour {
 
+    public uint cost = 10;
     public GameObject dormantTower;
     public GameObject[] towers;
 
@@ -20,7 +21,13 @@ public class ToggleTower : MonoBehaviour {
 
     void OnMouseDown() {
         if (dormantTower.activeSelf) {
-            dormantTower.SetActive(false);
+            if (CurrencyManager.monies > cost) {
+                CurrencyManager.monies -= cost;
+                dormantTower.SetActive(false);
+            } else {
+                Debug.Log("Insufficient funds!");
+                return;
+            }
         }
         towers[currentActive].SetActive(false);
         currentActive = (currentActive + 1) % towers.Length;

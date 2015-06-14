@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3705ef53e088499dbf8979f4d042371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 10
   dormantTower: {fileID: 109410}
   towers:
   - {fileID: 177346}
@@ -477,14 +478,18 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CreateObject
+        - HutongGames.PlayMaker.Actions.GetParent
+        - HutongGames.PlayMaker.Actions.SetParent
         - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000007000000
-        actionHashCodes: ac65eef1eec9d968
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000007000000090000000d000000
+        actionHashCodes: ac65eef1837b830b83d22ec8eec9d968
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -500,12 +505,40 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 104284}
         - useVariable: 1
-          name: 
+          name: newAoeAttack
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        fsmOwnerDefaultParams: []
+        - useVariable: 1
+          name: towerParent
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: towerParent
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 139268}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: newAoeAttack
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -547,12 +580,12 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 0000000000000000000000000100000000000000000000000001000000000000004e657874000000000000
+        byteData: 000000000000000000000000010000000000000000000000000100000000000000000000004e657874000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 13000000130000001c0000001c0000001300000011000000100000001f000000170000000f00000001000000
+        paramDataType: 13000000130000001c0000001c0000001300000011000000100000001400000013000000140000001300000011000000110000001f000000170000000f00000001000000
         paramName:
         - gameObject
         - spawnPoint
@@ -561,12 +594,18 @@ MonoBehaviour:
         - storeObject
         - networkInstantiate
         - networkGroup
+        - gameObject
+        - storeResult
+        - gameObject
+        - parent
+        - resetLocalPosition
+        - resetLocalRotation
         - eventTarget
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 0000000001000000000000000d000000020000001a0000001c0000000000000021000000250000002a000000
-        paramByteDataSize: 00000000000000000d0000000d00000000000000020000000500000000000000040000000500000001000000
+        paramDataPos: 0000000001000000000000000d000000020000001a0000001c0000000000000003000000010000000400000021000000230000000000000025000000290000002e000000
+        paramByteDataSize: 00000000000000000d0000000d00000000000000020000000500000000000000000000000000000000000000020000000200000000000000040000000500000001000000
     - name: Wait
       description: 
       colorIndex: 0
@@ -649,6 +688,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 120980, guid: 866d78351d74e495faa1cf0f9f341c2d, type: 2}
+      - useVariable: 1
+        name: newAoeAttack
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: towerParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -932,16 +983,20 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CreateObject
+        - HutongGames.PlayMaker.Actions.GetParent
+        - HutongGames.PlayMaker.Actions.SetParent
         - HutongGames.PlayMaker.Actions.SetFsmGameObject
         - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000070000000c000000
-        actionHashCodes: ac65eef1cc35dfe8eec9d968
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000007000000090000000d00000012000000
+        actionHashCodes: ac65eef1837b830b83d22ec8cc35dfe8eec9d968
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -963,12 +1018,40 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         - useVariable: 1
+          name: towerParent
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: towerParent
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
           name: targetEnemy
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 139268}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: newBullet
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -1030,12 +1113,12 @@ MonoBehaviour:
           value: target
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 000000000000000000000000010000000000000000000000000100000000000000004e657874000000000000
+        byteData: 00000000000000000000000001000000000000000000000000010000000000000000000000004e657874000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 13000000130000001c0000001c00000013000000110000001000000014000000120000001200000013000000010000001f000000170000000f00000001000000
+        paramDataType: 13000000130000001c0000001c00000013000000110000001000000014000000130000001400000013000000110000001100000014000000120000001200000013000000010000001f000000170000000f00000001000000
         paramName:
         - gameObject
         - spawnPoint
@@ -1045,6 +1128,12 @@ MonoBehaviour:
         - networkInstantiate
         - networkGroup
         - gameObject
+        - storeResult
+        - gameObject
+        - parent
+        - resetLocalPosition
+        - resetLocalRotation
+        - gameObject
         - fsmName
         - variableName
         - setValue
@@ -1053,8 +1142,8 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 0000000001000000000000000d000000020000001a0000001c00000000000000000000000100000003000000210000000000000022000000260000002b000000
-        paramByteDataSize: 00000000000000000d0000000d000000000000000200000005000000000000000000000000000000000000000100000000000000040000000500000001000000
+        paramDataPos: 0000000001000000000000000d000000020000001a0000001c000000000000000300000001000000040000002100000023000000020000000000000001000000050000002500000000000000260000002a0000002f000000
+        paramByteDataSize: 00000000000000000d0000000d000000000000000200000005000000000000000000000000000000000000000200000002000000000000000000000000000000000000000100000000000000040000000500000001000000
     events:
     - name: False
       isSystemEvent: 0
@@ -1115,6 +1204,12 @@ MonoBehaviour:
         value: {fileID: 0}
       - useVariable: 1
         name: targetEnemy
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: towerParent
         tooltip: 
         showInInspector: 0
         networkSync: 0

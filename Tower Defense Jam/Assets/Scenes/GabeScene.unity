@@ -92,7 +92,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 467647502}
     m_Modifications:
     - target: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_LocalPosition.x
@@ -124,15 +124,58 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 139268, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_Name
       value: NewTower1
       objectReference: {fileID: 0}
+    - target: {fileID: 11451744, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
+      propertyPath: currencyManager
+      value: 
+      objectReference: {fileID: 272475132}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &272475131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 272475133}
+  - 114: {fileID: 272475132}
+  m_Layer: 0
+  m_Name: CurrencyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &272475132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272475131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d726eba9ec0343efba04665d2f7b4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &272475133
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272475131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &293806419
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,33 +236,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &543297000
+--- !u!1 &467647501
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 543297001}
+  - 4: {fileID: 467647502}
   m_Layer: 0
-  m_Name: CurrencyManager
+  m_Name: Towers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &543297001
+--- !u!4 &467647502
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543297000}
+  m_GameObject: {fileID: 467647501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 767292907}
+  - {fileID: 1882002316}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &597512054
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +338,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!4 &767292907 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
+  m_PrefabInternal: {fileID: 209782985}
 --- !u!1 &1597199875
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,13 +428,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1001 &1740456699
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 467647502}
     m_Modifications:
     - target: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_LocalPosition.x
@@ -417,12 +466,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 139268, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
       propertyPath: m_Name
       value: NewTower2
       objectReference: {fileID: 0}
+    - target: {fileID: 11451744, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
+      propertyPath: currencyManager
+      value: 
+      objectReference: {fileID: 272475132}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
   m_IsPrefabParent: 0
@@ -499,6 +552,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!4 &1882002316 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 475982, guid: d917bf0536cca411c88c62418ee3cb12, type: 2}
+  m_PrefabInternal: {fileID: 1740456699}
 --- !u!1001 &1902261112
 Prefab:
   m_ObjectHideFlags: 0
