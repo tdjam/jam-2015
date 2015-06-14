@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 public class ToggleTower : MonoBehaviour {
 
+    public GameObject dormantTower;
     public GameObject[] towers;
 
-    int currentActive = 0;
+    int currentActive;
 
     // Use this for initialization
     void Start() {
-        towers[currentActive].SetActive(true);
+        currentActive = towers.Length - 1;
     }
 
     // Update is called once per frame
@@ -18,6 +19,9 @@ public class ToggleTower : MonoBehaviour {
     }
 
     void OnMouseDown() {
+        if (dormantTower.activeSelf) {
+            dormantTower.SetActive(false);
+        }
         towers[currentActive].SetActive(false);
         currentActive = (currentActive + 1) % towers.Length;
         towers[currentActive].SetActive(true);
