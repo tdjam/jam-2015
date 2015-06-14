@@ -4257,6 +4257,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11428412, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: zoomSmoothTime
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428412, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: moveScreenOffset
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
   m_IsPrefabParent: 0
