@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using Combat;
+
 public class DetectEnemiesInVolume : MonoBehaviour {
 
+    public int damage = 10;
     public float lifetime = 5f;
 
     // Use this for initialization
@@ -17,7 +20,8 @@ public class DetectEnemiesInVolume : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Enemy") {
-            Debug.LogFormat("Damaging {0} at {1}", other.tag, other.transform.position);
+            Stats enemyStats = other.gameObject.GetComponent<Stats>();
+            enemyStats.ReceiveDamage(damage);
         }
     }
 

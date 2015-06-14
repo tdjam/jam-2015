@@ -530,7 +530,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 0}
+            value: {fileID: 186428}
         - ownerOption: 1
           gameObject:
             useVariable: 1
