@@ -12,8 +12,7 @@ GameObject:
   - 136: {fileID: 13682078}
   - 23: {fileID: 2333126}
   - 195: {fileID: 19543498}
-  - 114: {fileID: 11412006}
-  - 114: {fileID: 11431594}
+  - 114: {fileID: 11401492}
   m_Layer: 0
   m_Name: EnemyPrototype
   m_TagString: Untagged
@@ -64,7 +63,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105154}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11412006
+--- !u!114 &11401492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -72,217 +71,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 105154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1384774831, guid: de72a6d2da64d114d95e3c5a01cfaec5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dcdc53052738498a8c5e6e3a3f10334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fsm:
-    usedInTemplate: {fileID: 0}
-    name: SeekTarget
-    startState: Seek Target
-    states:
-    - name: Seek Target
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 50
-        y: 116
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Next
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Complete
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SetAgentDestinationAsGameObject
-        - HutongGames.PlayMaker.Actions.GetDistance
-        - HutongGames.PlayMaker.Actions.FloatCompare
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000300000007000000
-        actionHashCodes: cb954b19f4c9cbe653489ed1
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: destination
-          tooltip: Location for this gameobject to seek.
-          showInInspector: 1
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: destination
-          tooltip: Location for this gameobject to seek.
-          showInInspector: 1
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 0000803f00000000000164697374616e636501000000000164697374616e63650000803f01656e645468726573686f6c6400000000004e65787401
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 14000000130000000f00000014000000130000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
-        paramName:
-        - gameObject
-        - destination
-        - triggerThreshold
-        - gameObject
-        - target
-        - storeResult
-        - everyFrame
-        - float1
-        - float2
-        - tolerance
-        - equal
-        - lessThan
-        - greaterThan
-        - everyFrame
-        paramDataPos: 0000000000000000000000000100000001000000050000001200000013000000200000003100000036000000360000003a0000003a000000
-        paramByteDataSize: 00000000000000000500000000000000000000000d000000010000000d000000110000000500000000000000040000000000000001000000
-    - name: Complete
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 204
-        y: 115
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.FinishFSM
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 00000000
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    events:
-    - name: Next
-      isSystemEvent: 0
-      isGlobal: 0
-    globalTransitions: []
-    variables:
-      floatVariables:
-      - useVariable: 1
-        name: distance
-        tooltip: Measurement to destination
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: endThreshold
-        tooltip: How far away from the destination to stop movement.
-        showInInspector: 0
-        networkSync: 0
-        value: 1
-      intVariables: []
-      boolVariables: []
-      stringVariables: []
-      vector2Variables: []
-      vector3Variables: []
-      colorVariables: []
-      rectVariables: []
-      quaternionVariables: []
-      gameObjectVariables:
-      - useVariable: 1
-        name: destination
-        tooltip: Location for this gameobject to seek.
-        showInInspector: 1
-        networkSync: 0
-        value: {fileID: 0}
-      objectVariables: []
-      materialVariables: []
-      textureVariables: []
-    description: 
-    docUrl: 
-    showStateLabel: 1
-    maxLoopCount: 0
-    watermark: 
-    version: 0
-    ExposedEvents: []
-    RestartOnEnable: 1
-    EnableDebugFlow: 0
-    StepFrame: 0
-    activeStateName: 
-  fsmTemplate: {fileID: 0}
---- !u!114 &11431594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23af39664cb2044c687451a4707fd0e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  author: Ash
-  note: The way the destination is set onto PlayMaker is a horrible way of setting
-    the destination.
+  endThreshold: 1
 --- !u!136 &13682078
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -338,6 +130,10 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 3efe22c8977484c40a8bbee23d49c27d, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endThreshold
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

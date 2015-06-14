@@ -101,9 +101,7 @@ namespace Level {
 						GameObject newUnit = Object.Instantiate(Sm.level.GetUnit(unit.type), origin.transform.position, Quaternion.identity) as GameObject;
 						newUnit.transform.SetParent(enemyParent);
 
-						// @TODO Sets the destination, but this is a horrible way of doing it
-						HutongGames.PlayMaker.FsmGameObject fsmTarget = newUnit.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmGameObject("destination");
-						if (fsmTarget != null) fsmTarget.Value = destination;
+						newUnit.GetComponent<NavDestination>().Setup(destination);
 
 						yield return new WaitForSeconds(unit.spawnDelay);
 					}
