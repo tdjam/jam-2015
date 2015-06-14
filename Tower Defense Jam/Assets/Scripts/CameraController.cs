@@ -7,25 +7,34 @@ namespace dt {
         public GameObject levelBoundary;
 
         public float moveSpeed = 1f;
-        public uint moveOffset = 5;
+        public uint moveScreenOffset = 10;
+        public float moveSmoothTime = 0.2f;
 
         public float zoomSpeed = 1f;
         public float minZoom = 4f;
         public float maxZoom = 20f;
-        public float zoomSmoothTime = 0.3f;
+        public float zoomSmoothTime = 0.2f;
 
         Camera cameraComponent;
+        Vector3 targetPosition;
+        Vector3 positionVelocity;
         float targetZoom;
-        float zoomVelocity = 0f;
+        float zoomVelocity;
 
         void Start() {
             cameraComponent = GetComponent<Camera>();
+            targetPosition = transform.localPosition;
             targetZoom = cameraComponent.orthographicSize;
         }
 
         void Update() {
-            transform.localPosition += KeyboardMove() * cameraComponent.orthographicSize;
-            transform.localPosition += MouseMove() * cameraComponent.orthographicSize;
+            var movement = new Vector3();
+            movement += KeyboardMove() * cameraComponent.orthographicSize;
+            movement += MouseMove() * cameraComponent.orthographicSize;
+            targetPosition += movement;
+            transform.localPosition = Vector3.SmoothDamp(
+                    transform.localPosition, targetPosition,
+                    ref positionVelocity, moveSmoothTime);
             // TODO: Clamp the movement to levelBoundary.
             MouseWheelZoom();
         }
@@ -39,16 +48,16 @@ namespace dt {
         }
 
         Vector3 MouseMove() {
-            var movement = new Vector3(0, 0, 0);
+            var movement = new Vector3();
             Vector3 mousePosition = Input.mousePosition;
-            if ((int) mousePosition.x < moveOffset) {
+            if ((int) mousePosition.x < moveScreenOffset) {
                 movement.x -= 1f;
-            } else if ((int) mousePosition.x > Screen.width - moveOffset) {
+            } else if ((int) mousePosition.x > Screen.width - moveScreenOffset) {
                 movement.x += 1f;
             }
-            if ((int) mousePosition.y < moveOffset) {
+            if ((int) mousePosition.y < moveScreenOffset) {
                 movement.z -= 1f;
-            } else if ((int) mousePosition.y > Screen.height - moveOffset) {
+            } else if ((int) mousePosition.y > Screen.height - moveScreenOffset) {
                 movement.z += 1f;
             }
             return movement.normalized * moveSpeed * Time.deltaTime;
