@@ -1821,7 +1821,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454512, guid: 63d9b9b016d8d410d9d7dd89ba06619f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63d9b9b016d8d410d9d7dd89ba06619f, type: 2}
@@ -4307,6 +4307,26 @@ Prefab:
       propertyPath: moveScreenOffset
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
   m_IsPrefabParent: 0
@@ -4419,7 +4439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409540, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_Name
@@ -4993,7 +5013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483302, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: debug
