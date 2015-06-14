@@ -6,7 +6,7 @@ namespace Level {
 		Red,
 		Green,
 		Blue,
-		Yellow
+		Alt
 	}
 }
 

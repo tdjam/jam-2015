@@ -14,5 +14,9 @@ namespace Level {
 		[Range(0f, 10f)] public float repeatDelay = 3f;
 
 		public List<Unit> squad;
+
+		public bool IsComplete () {
+			return repeatCount == repeatTotal;
+		}
 	}
 }

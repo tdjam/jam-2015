@@ -6,29 +6,15 @@ namespace Level {
 	[System.Serializable]
 	public class Spawner {
 		[SerializeField] List<Wave> waveQueue;
-		public bool complete;
+		[HideInInspector] public int waveCount;
 
 		public void Begin () {
-
-		}
-
-//		IEnumerator Loop () {
-//			while (waveQueue.Count == 0) {
-//
-//			}
-
-			// Pop off a wave
-			// Loop through and spawn units
-			// If repeat re-loop spawn unit
-			// When complete pop off the next wave and repeat if waves are still available
-//		}
-
-		public void SpawnWave () {
-			// Pop off
+			waveCount = 0;
+			Sm.level.StartCoroutine(Sm.level.RunSpawner(waveQueue, this));
 		}
 
 		public bool IsComplete () {
-			return waveQueue.Count == 0;
+			return waveQueue.Count == waveCount;
 		}
 	}
 }
