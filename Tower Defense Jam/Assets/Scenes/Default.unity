@@ -992,7 +992,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &421227515
 Prefab:
   m_ObjectHideFlags: 0
@@ -1280,7 +1280,7 @@ Transform:
   m_Children:
   - {fileID: 1258608085}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!1001 &481730722
 Prefab:
   m_ObjectHideFlags: 0
@@ -1493,7 +1493,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &505227134
 Prefab:
   m_ObjectHideFlags: 0
@@ -1949,7 +1949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &743300188
 Prefab:
   m_ObjectHideFlags: 0
@@ -4419,7 +4419,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409540, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_Name
@@ -4993,7 +4993,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483302, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: debug
@@ -5122,6 +5122,14 @@ Prefab:
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: levels.Array.data[0].spawners.Array.data[1].waveQueue.Array.data[0].spawnPoint
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172492, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 116084, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
@@ -5570,7 +5578,7 @@ Transform:
   - {fileID: 964636724}
   - {fileID: 2137648250}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1921388523
 Prefab:
   m_ObjectHideFlags: 0

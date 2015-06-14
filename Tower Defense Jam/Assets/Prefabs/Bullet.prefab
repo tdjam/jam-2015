@@ -118,12 +118,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.MoveTowards
+        - HutongGames.PlayMaker.Actions.iTweenMoveTo
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: b509599a
+        - 
+        actionEnabled: 0100
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: b509599af0ad926e
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -132,7 +134,27 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
+        - useVariable: 1
+          name: target
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 0
           gameObject:
             useVariable: 0
@@ -147,15 +169,23 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 00000000000000000000000001000000000000017370656564cdcccc3d004e657874
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 00000000000000000000000001000000000040017370656564cdcccc3d004e657874000000000000000000000000010000003f00000000000000000000010000000001000000000000000000000000000000000000000000010000000001000000000000000000000100004e657874000001000000
+        arrayParamSizes: 0000000000000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmGameObject
+        - HutongGames.PlayMaker.FsmVector3
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000130000001c000000110000000f0000000f00000017000000
+        paramDataType: 14000000130000001c000000110000000f0000000f000000170000001400000012000000130000001c0000000f0000000f0000000f00000007000000070000000700000011000000130000001c0000000f00000007000000110000000f0000000c0000000c000000110000001700000017000000110000001100000011000000
         paramName:
         - gameObject
         - targetObject
@@ -164,8 +194,33 @@ MonoBehaviour:
         - maxSpeed
         - finishDistance
         - finishEvent
-        paramDataPos: 0000000000000000000000000d0000000f000000190000001e000000
-        paramByteDataSize: 00000000000000000d000000020000000a0000000500000004000000
+        - gameObject
+        - id
+        - transformPosition
+        - vectorPosition
+        - time
+        - delay
+        - speed
+        - space
+        - easeType
+        - loopType
+        - orientToPath
+        - lookAtObject
+        - lookAtVector
+        - lookTime
+        - axis
+        - moveToPath
+        - lookAhead
+        - transforms
+        - vectors
+        - reverse
+        - startEvent
+        - finishEvent
+        - realTime
+        - stopOnExit
+        - loopDontFinish
+        paramDataPos: 0000000000000000000000000d0000000f000000190000001e000000010000000000000001000000220000002f00000034000000390000003e00000042000000460000004a000000020000004c000000590000005e00000062000000640000000000000001000000690000006b0000006b0000006f0000007100000073000000
+        paramByteDataSize: 00000000000000000d000000020000000a00000005000000040000000000000000000000000000000d00000005000000050000000500000004000000040000000400000002000000000000000d000000050000000400000002000000050000000000000000000000020000000000000004000000020000000200000002000000
     - name: Die
       description: 
       colorIndex: 0
@@ -222,7 +277,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 2
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
