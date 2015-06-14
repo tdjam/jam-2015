@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BeatDetector : MonoBehaviour {
-	public AudioSource song;
+	AudioSource song;
 	public float threshold = 200f;
 
 	float[] historyBuffer = new float[43];
