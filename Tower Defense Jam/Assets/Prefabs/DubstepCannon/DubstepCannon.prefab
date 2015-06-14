@@ -723,7 +723,7 @@ MonoBehaviour:
     invulnerable: 0
   charge:
     charge: 100
-    chargeRegen: 100
+    chargeRegen: 50
   combat:
     attackDamage: 10
     attackable: 1
