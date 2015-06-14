@@ -78,20 +78,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - spawners:
-    - {fileID: 0}
+  - {fileID: 11438236, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
   debug: 0
   debugPrefab: {fileID: 170118, guid: 8561088e29981496bb9ed2f5ae230c09, type: 2}
   waveTextOutput: {fileID: 11454064}
   waveComplete: 0
+  enemyParent: {fileID: 0}
   redStart: {fileID: 0}
   redEnd: {fileID: 0}
   blueStart: {fileID: 0}
   blueEnd: {fileID: 0}
   greenStart: {fileID: 0}
   greenEnd: {fileID: 0}
-  yellowStart: {fileID: 0}
-  yellowEnd: {fileID: 0}
+  altStart: {fileID: 0}
+  altEnd: {fileID: 0}
   unitBasic: {fileID: 0}
   currentLevel: 0
 --- !u!114 &11425594
@@ -398,7 +398,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 11438236, guid: ca188317b8c3c473a95cae1717bea680,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162174}

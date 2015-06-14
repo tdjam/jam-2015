@@ -883,6 +883,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 461656, guid: 3db4439001aa94c57aece17d4adfab40, type: 2}
   m_PrefabInternal: {fileID: 396648763}
+--- !u!1001 &397561848
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.06695497
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.6015625
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.61909318
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406050, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &414305214
 Prefab:
   m_ObjectHideFlags: 0
@@ -4870,7 +4912,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: levels.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: levels.Array.data[0].spawners.Array.size
@@ -4938,7 +4980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483302, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: debug
