@@ -15,6 +15,8 @@ namespace dt {
         public float maxZoom = 20f;
         public float zoomSmoothTime = 0.2f;
 
+        public bool mouseMoveEnabled = true;
+
         Camera cameraComponent;
         Vector3 targetPosition;
         Vector3 positionVelocity;
@@ -30,7 +32,9 @@ namespace dt {
         void Update() {
             var movement = new Vector3();
             movement += KeyboardMove() * cameraComponent.orthographicSize;
-            movement += MouseMove() * cameraComponent.orthographicSize;
+            if (mouseMoveEnabled) {
+                movement += MouseMove() * cameraComponent.orthographicSize;
+            }
             targetPosition += movement;
             transform.localPosition = Vector3.SmoothDamp(
                     transform.localPosition, targetPosition,

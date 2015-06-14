@@ -1949,7 +1949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &743300188
 Prefab:
   m_ObjectHideFlags: 0
@@ -4326,6 +4326,14 @@ Prefab:
     - target: {fileID: 2018742, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
       propertyPath: m_BackGroundColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428412, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: mouseMoveEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428412, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
