@@ -1652,6 +1652,10 @@ Prefab:
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11434908, guid: a6f47daa65aa344399f0c749a42c398c, type: 2}
+      propertyPath: charge.chargeRegen
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6f47daa65aa344399f0c749a42c398c, type: 2}
   m_IsPrefabParent: 0

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Combat;
 
 namespace Level {
 	[System.Serializable]
@@ -36,10 +37,25 @@ namespace Level {
 
 		[HideInInspector] public int currentLevel = 0;
 
+		// Track if the base is destroyed
+		Stats baseStats;
+		[HideInInspector] public bool isBaseDead;
+
+		// If you won the game
+		[HideInInspector] public bool isWinGame;
+
 		void Awake () {
 			waveComplete = true;
 			Sm.level = this;
 			if (debug) Instantiate(debugPrefab);
+		}
+
+		void Start () {
+			baseStats = Sm.cannon.GetComponent<Stats>();
+		}
+
+		void Update () {
+			isBaseDead = baseStats.health.Health == 0;
 		}
 
 		// Begin the next level
@@ -78,8 +94,9 @@ namespace Level {
 				yield return new WaitForSeconds(1f);
 			}
 
-			waveComplete = true;
 			currentLevel += 1;
+			isWinGame = levels.Count == currentLevel;
+			waveComplete = true;
 		}
 
 		public IEnumerator RunSpawner (List<Wave> waveQueue, Spawner spawner) {

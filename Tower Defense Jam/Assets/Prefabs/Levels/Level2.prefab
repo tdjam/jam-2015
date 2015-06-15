@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &163508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 406050}
+  - 114: {fileID: 11438236}
+  m_Layer: 0
+  m_Name: Level2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406050
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11438236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba4a418615644dbc9f663445f728b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners:
+  - waveQueue:
+    - spawnPoint: 0
+      repeatTotal: 3
+      repeatCount: 0
+      repeatDelay: 3.29999995
+      squad:
+      - type: 0
+        destination: 0
+        spawnDelay: 1
+      - type: 0
+        destination: 0
+        spawnDelay: 1
+      - type: 0
+        destination: 0
+        spawnDelay: 1
+    waveCount: 0
+  - waveQueue:
+    - spawnPoint: 1
+      repeatTotal: 3
+      repeatCount: 0
+      repeatDelay: 3.29999995
+      squad:
+      - type: 0
+        destination: 1
+        spawnDelay: 1
+      - type: 0
+        destination: 1
+        spawnDelay: 1
+      - type: 0
+        destination: 1
+        spawnDelay: 1
+      - type: 0
+        destination: 1
+        spawnDelay: 1
+      - type: 0
+        destination: 1
+        spawnDelay: 1
+    waveCount: 0
+  - waveQueue:
+    - spawnPoint: 2
+      repeatTotal: 3
+      repeatCount: 0
+      repeatDelay: 5.07000017
+      squad:
+      - type: 0
+        destination: 2
+        spawnDelay: 1
+      - type: 0
+        destination: 3
+        spawnDelay: 1
+      - type: 0
+        destination: 3
+        spawnDelay: 1
+      - type: 0
+        destination: 2
+        spawnDelay: 1
+      - type: 0
+        destination: 2
+        spawnDelay: 1
+    waveCount: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].squad.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].squad.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].repeatTotal
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].repeatDelay
+      value: 3.29999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].squad.Array.data[0].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].squad.Array.data[1].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[0].waveQueue.Array.data[0].squad.Array.data[2].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].spawnPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].squad.Array.data[0].destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].squad.Array.data[1].destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].squad.Array.data[2].destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[1].waveQueue.Array.data[0].repeatTotal
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].spawnPoint
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].repeatDelay
+      value: 5.07000017
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[1].destination
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[1].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[2].destination
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[2].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[3].destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[3].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[4].destination
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[4].spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawners.Array.data[2].waveQueue.Array.data[0].squad.Array.data[0].destination
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 163508}
+  m_IsPrefabParent: 1
