@@ -702,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab91fc72542ba433cb46b01a82eb9edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeDecreaseRate: 0
   debug: 0
   cannonGuiPrefab: {fileID: 197506, guid: ba459857530a942b899e50f8f276a1c9, type: 2}
 --- !u!114 &11434908
@@ -716,8 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    health: 20
-    healthRegen: 0
+    health: 100
+    healthRegen: 10
     defense: 0
     immortal: 1
     invulnerable: 0
