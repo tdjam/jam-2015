@@ -18,7 +18,7 @@ public class CurrencyManager : MonoBehaviour {
 	}
 
 	public bool IsMoney (uint money) {
-		return money >= this.money;
+		return money <= this.money;
 	}
 
 	public void Spend (uint money) {
