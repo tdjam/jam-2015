@@ -5,6 +5,7 @@ namespace Enemy {
 	public class EnemyDeath : MonoBehaviour {
 		Stats stats;
 		NavDestination dest;
+		[SerializeField] uint moneyOnDeath;
 		[SerializeField] GameObject deathParticles;
 
 		void Awake () {
@@ -26,6 +27,7 @@ namespace Enemy {
 			}
 
 			if (stats.health.IsDead()) {
+				Sm.currency.Receive(moneyOnDeath);
 				Death();
 			}
 		}

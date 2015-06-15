@@ -1375,6 +1375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e89357c43a64fa98a80268ad5ad3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyOnDeath: 10
   deathParticles: {fileID: 138582}
 --- !u!114 &11432692
 MonoBehaviour:
@@ -10839,6 +10840,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moneyOnDeath
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

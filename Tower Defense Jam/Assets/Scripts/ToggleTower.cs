@@ -21,8 +21,8 @@ public class ToggleTower : MonoBehaviour {
 
     void OnMouseDown() {
         if (dormantTower.activeSelf) {
-            if (CurrencyManager.monies > cost) {
-                CurrencyManager.monies -= cost;
+            if (Sm.currency.IsMoney(cost)) {
+				Sm.currency.Spend(cost);
                 dormantTower.SetActive(false);
             } else {
                 Debug.Log("Insufficient funds!");

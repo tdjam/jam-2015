@@ -41,7 +41,6 @@ namespace Cannon {
 
 				if (debug) {
 					stats.charge.Charge = stats.charge.ChargeMax;
-					Debug.Log("Cannon fire");
 				} 
 
 				StartCoroutine(CannonFireLoop());
@@ -51,14 +50,14 @@ namespace Cannon {
 		IEnumerator CannonFireLoop () {
 			laser.FireLaser();
 			float timer = laserDuration;
-			Stats aimTarget = null;
+			Stats targetStats = null;
 
 			while (timer > 0f) {
-				if (aimTarget == null || aimTarget.health.IsDead()) {
+				if (targetStats == null || targetStats.health.IsDead()) {
 					GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 					if (enemy != null) {
-						aimTarget = enemy.GetComponent<Stats>();
-						aimer.aimTarget = aimTarget.transform;
+						targetStats = enemy.GetComponent<Stats>();
+						aimer.aimTarget = targetStats.transform;
 					}
 				}
 

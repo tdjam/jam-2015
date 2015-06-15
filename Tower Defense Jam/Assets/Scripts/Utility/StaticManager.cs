@@ -5,8 +5,10 @@ using System.Collections.Generic;
 static public class Sm {
 	static public Level.LevelManager level;
 	static public Cannon.CannonManager cannon;
+	static public CurrencyManager currency;
 	
 	static void ResetAll () {
+		currency = null;
 		level = null;
 		cannon = null;
 	}
