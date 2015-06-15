@@ -17,7 +17,6 @@ namespace Music {
 	public class MusicManager : MonoBehaviour {
 		
 		[SerializeField] public AudioMixer mainMixer;
-		[SerializeField] GameObject musicPrefab;
 		[SerializeField] string defaultAutoPlayId;
 		[SerializeField] List<Track> tracks;
 
@@ -26,12 +25,12 @@ namespace Music {
 			//Create an audio object for each track
 			foreach (Track t in tracks) {
 
-				GameObject prefab = Instantiate (musicPrefab) as GameObject;
+				GameObject prefab = Instantiate (new GameObject());
 				prefab.transform.SetParent(this.transform);
 				prefab.name = t.id;
 
 				//Set values for the audio source component
-				AudioSource audioPrefab = prefab.GetComponent<AudioSource>();
+				AudioSource audioPrefab = prefab.AddComponent<AudioSource>();
 
 				audioPrefab.loop = t.loop;
 				audioPrefab.playOnAwake = false;
@@ -80,7 +79,8 @@ namespace Music {
 		}
 
 		//Combines the above three functions so you can switch snapshots and transition groups that are playing
-		public void TransitionAudioSnapshotsAndGroups(string snapshot, float transitionTime) {
+		public void TransitionAudioSnapshotsAndGroups(string snapshot) {
+			float transitionTime = 1f;
 			transitionAudioSnapshot (snapshot, transitionTime);
 			playAudioGroup (snapshot);
 			StopAudioGroup (snapshot, transitionTime, true);

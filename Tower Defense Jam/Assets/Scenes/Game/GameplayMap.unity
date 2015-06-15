@@ -3963,7 +3963,8 @@ Prefab:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11461562, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1481449287
@@ -4498,6 +4499,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   author: Ash
   note: Some of the road edges should be diagonal to add more diversity.
+--- !u!1 &1669105630 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 176034, guid: 0f47b80ec9d8649ebb46a3f20d76ba1c, type: 2}
+  m_PrefabInternal: {fileID: 1479010864}
+--- !u!114 &1669105636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669105630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd097bc8e5a0ad74caa163edc5be38ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 4c6a9c010dcd344f9b663e17c29e0a58, type: 2}
+  horizontalPitch: {fileID: 8300000, guid: 60cc422c21c4ba94dbdd18f2543a82bf, type: 3}
+  verticalPitch: {fileID: 8300000, guid: 9dac980924104e64d9e9a0d0dc349d8b, type: 3}
+  minPanRange: -50
+  maxPanRange: 50
 --- !u!1001 &1670573260
 Prefab:
   m_ObjectHideFlags: 0

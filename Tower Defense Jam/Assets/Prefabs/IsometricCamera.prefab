@@ -13,6 +13,7 @@ GameObject:
   - 124: {fileID: 12489646}
   - 81: {fileID: 8138648}
   - 114: {fileID: 11428412}
+  - 114: {fileID: 11461562}
   m_Layer: 0
   m_Name: IsometricCamera
   m_TagString: MainCamera
@@ -99,6 +100,22 @@ MonoBehaviour:
   maxZoom: 20
   zoomSmoothTime: .300000012
   mouseMoveEnabled: 1
+--- !u!114 &11461562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd097bc8e5a0ad74caa163edc5be38ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 4c6a9c010dcd344f9b663e17c29e0a58, type: 2}
+  horizontalPitch: {fileID: 0}
+  verticalPitch: {fileID: 0}
+  minPanRange: -50
+  maxPanRange: 50
 --- !u!124 &12489646
 Behaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +150,11 @@ Prefab:
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mainMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 4c6a9c010dcd344f9b663e17c29e0a58,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176034}

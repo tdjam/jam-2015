@@ -40,9 +40,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMixer: {fileID: 24100000, guid: 4c6a9c010dcd344f9b663e17c29e0a58, type: 2}
-  musicPrefab: {fileID: 123642, guid: 1c2a2c424cedc4d6d84bf11782a22777, type: 2}
   defaultAutoPlayId: 
-  tracks: []
+  tracks:
+  - id: Title
+    clip: {fileID: 8300000, guid: dc5d908cce8f14233b27fb4b4ea7fcf7, type: 3}
+    mixerGroup: Title
+    loop: 1
+    playOnAwake: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,7 +56,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: tracks.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: musicPrefab
@@ -65,11 +69,27 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[0].id
-      value: hello
+      value: Title
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[1].id
       value: hi
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc5d908cce8f14233b27fb4b4ea7fcf7, type: 3}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[0].mixerGroup
+      value: Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[0].playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[0].loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
