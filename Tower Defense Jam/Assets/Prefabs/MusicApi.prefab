@@ -47,6 +47,11 @@ MonoBehaviour:
     mixerGroup: Title
     loop: 1
     playOnAwake: 1
+  - id: Game
+    clip: {fileID: 8300000, guid: dd5e0d5256bee8446a2e982ba8ea959b, type: 3}
+    mixerGroup: Game
+    loop: 1
+    playOnAwake: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -56,7 +61,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: tracks.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: musicPrefab
@@ -73,7 +78,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[1].id
-      value: hi
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[0].clip
@@ -91,6 +96,18 @@ Prefab:
       propertyPath: tracks.Array.data[0].loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[1].mixerGroup
+      value: Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[1].playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tracks.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd5e0d5256bee8446a2e982ba8ea959b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131840}

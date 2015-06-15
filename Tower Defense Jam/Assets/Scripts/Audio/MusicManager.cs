@@ -27,7 +27,7 @@ namespace Music {
 
 				GameObject prefab = Instantiate (new GameObject());
 				prefab.transform.SetParent(this.transform);
-				prefab.name = t.id;
+				prefab.name = "audio_" + t.id;
 
 				//Set values for the audio source component
 				AudioSource audioPrefab = prefab.AddComponent<AudioSource>();
@@ -55,7 +55,7 @@ namespace Music {
 
 			foreach (Track t in tracks) {
 				if (t.mixerGroup == group) {
-					this.transform.FindChild(t.id).gameObject.GetComponent<AudioSource>().Play();
+					GameObject.Find("audio_" + t.id).GetComponent<AudioSource>().Play();
 				}
 			}
 
@@ -63,16 +63,16 @@ namespace Music {
 
 		//Stop all tracks in a particular group OR stop all tracks in all groups EXCEPT the defined group
 		public void StopAudioGroup (string group, float delay, bool stopAllExceptDefinedGroup) {
-			StartCoroutine (StopAudioLoop (group, delay, stopAllExceptDefinedGroup));
+			GameObject.Find("_Shared/MusicApi(Clone)").GetComponent<MusicManager>().StartCoroutine (StopAudioLoop (group, delay, stopAllExceptDefinedGroup));
 		}
 
-		IEnumerator StopAudioLoop (string group, float delay, bool stopAllExceptDefinedGroup) {
+		public IEnumerator StopAudioLoop (string group, float delay, bool stopAllExceptDefinedGroup) {
 			yield return new WaitForSeconds(delay);
 
 			foreach (Track t in tracks) {
 
 				if ( (stopAllExceptDefinedGroup && t.mixerGroup != group) || t.mixerGroup == group ) {
-					this.transform.FindChild(t.id).gameObject.GetComponent<AudioSource>().Stop();
+					GameObject.Find("audio_" + t.id).gameObject.GetComponent<AudioSource>().Stop();
 				}
 
 			}	
