@@ -127,7 +127,7 @@ GameObject:
   - 4: {fileID: 419400}
   - 95: {fileID: 9520204}
   m_Layer: 0
-  m_Name: 'Enemy '
+  m_Name: EnemyGraphicsPrototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

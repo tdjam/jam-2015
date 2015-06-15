@@ -16,7 +16,7 @@ public class NavDestination : MonoBehaviour {
 		agent.SetDestination(destination.transform.position);
 	}
 
-	bool IsDestination () {
+	public bool IsDestination () {
 		return Vector3.Distance(transform.position, agent.destination) < endThreshold;
 	}
 }

@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11438236, guid: ca188317b8c3c473a95cae1717bea680, type: 2}
-  debug: 0
+  debug: 1
   debugPrefab: {fileID: 170118, guid: 8561088e29981496bb9ed2f5ae230c09, type: 2}
   waveTextOutput: {fileID: 11454064}
   waveComplete: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   greenEnd: {fileID: 0}
   altStart: {fileID: 0}
   altEnd: {fileID: 0}
-  unitBasic: {fileID: 0}
+  unitBasic: {fileID: 105154, guid: b2dde4c08556643349d07f56205ef297, type: 2}
   currentLevel: 0
 --- !u!114 &11425594
 MonoBehaviour:

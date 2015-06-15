@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserDuration: 10
-  debug: 0
+  debug: 1
   cannonGuiPrefab: {fileID: 197506, guid: ba459857530a942b899e50f8f276a1c9, type: 2}
 --- !u!114 &11433814
 MonoBehaviour:
@@ -831,7 +831,7 @@ MonoBehaviour:
   aimTarget: {fileID: 0}
   aimAngleOffset: {x: 90, y: 0, z: 0}
   forwardAimOffset: 2.52999997
-  aimTime: .300000012
+  aimTime: .200000003
   maxAimSpeed: 20
 --- !u!114 &11443320
 MonoBehaviour:
