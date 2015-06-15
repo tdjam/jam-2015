@@ -1835,6 +1835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDuration: 10
   debug: 0
+  showCannonGui: 1
   cannonGuiPrefab: {fileID: 197506, guid: ba459857530a942b899e50f8f276a1c9, type: 2}
 --- !u!114 &11433814
 MonoBehaviour:
@@ -1919,6 +1920,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: debug
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: showCannonGui
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

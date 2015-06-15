@@ -27,17 +27,25 @@ namespace Cannon {
 		
 		void Start () {
 			originPos = rotateTarget.position;
+
+			if (aimTarget != null) {
+				UpdateAim(aimTarget.position);
+				aimTarget = null;
+			}
 		}
 		
 		// @TODO Use coroutine to only aim when not pointing at the target maybe?
 		void Update () {
 			if (aimTarget == null) return;
 			
-			rotateTarget.position = originPos;
 			aimPos = Vector3.SmoothDamp(aimPos, aimTarget.position, ref dampVelocity, aimTime, maxAimSpeed);
-			
-			rotateTarget.rotation = Quaternion.LookRotation(aimPos - rotateTarget.position) * Quaternion.Euler(aimAngleOffset.x, aimAngleOffset.y, aimAngleOffset.z);
-			rotateTarget.position = Vector3.MoveTowards(rotateTarget.position, aimPos, forwardAimOffset);
+			UpdateAim(aimPos);
+		}
+
+		void UpdateAim (Vector3 pos) {
+			rotateTarget.position = originPos;
+			rotateTarget.rotation = Quaternion.LookRotation(pos - rotateTarget.position) * Quaternion.Euler(aimAngleOffset.x, aimAngleOffset.y, aimAngleOffset.z);
+			rotateTarget.position = Vector3.MoveTowards(rotateTarget.position, pos, forwardAimOffset);
 		}
 	}
 }

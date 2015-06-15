@@ -12,12 +12,15 @@ namespace Cannon {
 
 		[Tooltip("Allow the cannon to be fired as often as you want?")]
 		[SerializeField] bool debug;
+
+		[Tooltip("Prevent the cannon GUI from being generated")]
+		[SerializeField] bool showCannonGui;
 		
 		[Tooltip("Cannon GUI that should be generated and attached at run-time")]
 		[SerializeField] GameObject cannonGuiPrefab;
 		CannonGuiManager cannonGui;
 		
-		void Start () {
+		void Awake () {
 			Sm.cannon = this;
 
 			stats = GetComponent<Stats>();
@@ -29,6 +32,8 @@ namespace Cannon {
 			cannonGui.charge.maxValue = stats.charge.ChargeMax;
 			cannonGui.health.maxValue = stats.health.HealthMax;
 			cannonGui.manager = this;
+
+			cannonGui.gameObject.SetActive(showCannonGui);
 
 			if (debug) {
 				stats.charge.Charge = stats.charge.ChargeMax;
