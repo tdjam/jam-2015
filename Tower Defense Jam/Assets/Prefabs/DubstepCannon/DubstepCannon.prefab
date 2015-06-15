@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11424448}
   - 114: {fileID: 11435746}
   - 114: {fileID: 11434908}
+  - 114: {fileID: 11433814}
   m_Layer: 0
   m_Name: DubstepCannon
   m_TagString: Untagged
@@ -154,6 +155,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &193854
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 449964}
+  - 114: {fileID: 11403920}
+  - 65: {fileID: 6570852}
+  - 54: {fileID: 5478156}
+  m_Layer: 0
+  m_Name: DamageBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &195422
 GameObject:
   m_ObjectHideFlags: 1
@@ -201,7 +220,6 @@ GameObject:
   - 33: {fileID: 3312032}
   - 114: {fileID: 11443320}
   - 23: {fileID: 2364518}
-  - 114: {fileID: 11457908}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -255,7 +273,8 @@ Transform:
   m_LocalRotation: {x: -.629431725, y: -.322204053, z: -.322204202, w: .629432142}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 449964}
   m_Father: {fileID: 454626}
   m_RootOrder: 3
 --- !u!4 &423394
@@ -309,6 +328,18 @@ Transform:
   m_LocalScale: {x: 5, y: 6, z: 5}
   m_Children: []
   m_Father: {fileID: 454626}
+  m_RootOrder: 0
+--- !u!4 &449964
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193854}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 100}
+  m_Children: []
+  m_Father: {fileID: 420606}
   m_RootOrder: 0
 --- !u!4 &454626
 Transform:
@@ -643,6 +674,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196438}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5478156
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193854}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6508248
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -691,6 +737,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6570852
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11403920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940fb0b7e90844cfdacc54442f899798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11434908}
+  filterTag: Enemy
 --- !u!114 &11424448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,9 +773,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab91fc72542ba433cb46b01a82eb9edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeDecreaseRate: 0
+  laserDuration: 10
   debug: 0
   cannonGuiPrefab: {fileID: 197506, guid: ba459857530a942b899e50f8f276a1c9, type: 2}
+--- !u!114 &11433814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055348f1ace264eb882c7554f877373f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 198418}
+  snapTarget: {fileID: 401664}
+  fireDistanceMax: 100
+  fireSmoothing: .00999999978
+  maxSpeed: 999
 --- !u!114 &11434908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -757,26 +844,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0884dceb0d4308c4eb8bc763c8f8deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dynamic: 0
+  m_dynamic: 1
   m_startPos: {x: 0, y: 0, z: 0}
-  m_endPos: {x: 0, y: 10, z: 0}
+  m_endPos: {x: 0, y: 0, z: 0}
   m_setMaterialColor: 0
   m_lineColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &11457908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055348f1ace264eb882c7554f877373f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapTarget: {fileID: 401664}
-  fireDistanceMax: 10
-  fireSmoothing: 0
-  maxSpeed: 0
 --- !u!135 &13567826
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -808,7 +880,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104526}

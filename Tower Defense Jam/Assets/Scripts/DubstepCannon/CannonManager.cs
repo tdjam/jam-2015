@@ -5,9 +5,10 @@ using Combat;
 namespace Cannon {
 	public class CannonManager : MonoBehaviour {
 		Stats stats;
+		CannonAimer aimer;
+		CannonLaser laser;
 
-		[Tooltip("How fast will the charge decrease when firing")]
-		[SerializeField] int chargeDecreaseRate;
+		[SerializeField] float laserDuration;
 
 		[Tooltip("Allow the cannon to be fired as often as you want?")]
 		[SerializeField] bool debug;
@@ -20,25 +21,54 @@ namespace Cannon {
 			Sm.cannon = this;
 
 			stats = GetComponent<Stats>();
+			aimer = GetComponent<CannonAimer>();
+			laser = GetComponent<CannonLaser>();
 
 			// Setup the stats
 			cannonGui = Instantiate(cannonGuiPrefab).GetComponent<CannonGuiManager>();
 			cannonGui.charge.maxValue = stats.charge.ChargeMax;
 			cannonGui.health.maxValue = stats.health.HealthMax;
+			cannonGui.manager = this;
+
+			if (debug) {
+				stats.charge.Charge = stats.charge.ChargeMax;
+			}
 		}
 
 		public void FireCannon () {
-			// If fully charged and not firing
+			if (stats.charge.IsFull()) {
+				stats.charge.Charge = 0;
+
+				if (debug) {
+					stats.charge.Charge = stats.charge.ChargeMax;
+					Debug.Log("Cannon fire");
+				} 
+
+				StartCoroutine(CannonFireLoop());
+			}
 		}
 		
-//		IEnumerator CannonFireLoop () {
-			// turn on the laser
-			// Target the nearest enemy with a relative targeting point
+		IEnumerator CannonFireLoop () {
+			laser.FireLaser();
+			float timer = laserDuration;
+			Stats aimTarget = null;
 
-			// Decrase charge at the appropriate rate
-			// When enemy is killed find the next nearest enemy to that targeting point
-			// Repeat until the charge runs out
-//		}
+			while (timer > 0f) {
+				if (aimTarget == null || aimTarget.health.IsDead()) {
+					GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+					if (enemy != null) {
+						aimTarget = enemy.GetComponent<Stats>();
+						aimer.aimTarget = aimTarget.transform;
+					}
+				}
+
+				timer -= Time.deltaTime;
+				yield return null;
+			}
+
+			aimer.aimTarget = null;
+			laser.StopLaser();
+		}
 
 		void Update () {
 			// @TODO Smooth damp these values

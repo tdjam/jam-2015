@@ -6,5 +6,11 @@ namespace Cannon {
 		public Slider health;
 		public Slider charge;
 		public Button fireCannon;
+
+		public CannonManager manager;
+
+		public void FireCannon () {
+			manager.FireCannon();
+		}
 	}
 }
