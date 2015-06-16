@@ -4096,7 +4096,7 @@ MonoBehaviour:
         tooltip: Time between shots
         showInInspector: 1
         networkSync: 0
-        value: 3
+        value: 2
       - useVariable: 1
         name: distanceToEnemy
         tooltip: 
