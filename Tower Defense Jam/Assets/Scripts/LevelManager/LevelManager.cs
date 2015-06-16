@@ -12,6 +12,8 @@ namespace Level {
 		[SerializeField] bool debug;
 		[SerializeField] GameObject debugPrefab;
 
+		public AudioClip newWave;
+
 		[SerializeField] UnityEngine.UI.Text waveTextOutput;
 
 		// If the wave has been complete
@@ -67,6 +69,9 @@ namespace Level {
 
 			waveTextOutput.text = string.Format("Wave {0}", currentLevel + 1);
 			waveTextOutput.gameObject.SetActive(true);
+
+			this.GetComponent<AudioSource> ().PlayOneShot(newWave);
+		
 
 			StartCoroutine(RunLevel(lv));
 		}

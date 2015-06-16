@@ -112,6 +112,9 @@ AudioMixerGroupController:
   m_Pitch: 91d6286d8e51113468c3c7a570b20bba
   m_Effects:
   - {fileID: 24435862}
+  - {fileID: 24495254}
+  - {fileID: 24467156}
+  - {fileID: 24496998}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -181,6 +184,91 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &24467156
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: acd76a9a5fb3e49018843ccb007a4211
+  m_EffectName: SFX Reverb
+  m_MixLevel: 8b61ff97fdf03463ea9c7f1136b6dce5
+  m_Parameters:
+  - m_ParameterName: Dry Level
+    m_GUID: a58412f7701624aee9e1f68530ca6e36
+  - m_ParameterName: Room
+    m_GUID: 6e5de6d9a3c384bf88ba57975b1c9024
+  - m_ParameterName: Room HF
+    m_GUID: 9cd9e926489654d50a83baff7ca5a6b9
+  - m_ParameterName: Decay Time
+    m_GUID: e05071e90f04d45ba93bc6e250e38bf9
+  - m_ParameterName: Decay HF Ratio
+    m_GUID: 1db7760c8304444c19490a82d7aab0eb
+  - m_ParameterName: Reflections
+    m_GUID: 83038374d449d481dbd2cbf30b378a7c
+  - m_ParameterName: Reflect Delay
+    m_GUID: a0ce7c989ddb54e349847d5771597501
+  - m_ParameterName: Reverb
+    m_GUID: 35e7529dce7ea4cc99bbd1bffa944dc5
+  - m_ParameterName: Reverb Delay
+    m_GUID: 3fc4dfe2db289442197e86a204f83e2c
+  - m_ParameterName: Diffusion
+    m_GUID: 3d794467bfe8c4ef8ae3a6e5d9cf5cd5
+  - m_ParameterName: Density
+    m_GUID: 4824787a8b570436ab10642a524f6568
+  - m_ParameterName: HF Reference
+    m_GUID: 43f6912a03b234166a954762e4c08147
+  - m_ParameterName: Room LF
+    m_GUID: 760776235cb79437896286db02d5ba79
+  - m_ParameterName: LF Reference
+    m_GUID: 1ea9a1f0b365443af86635e680325fb0
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24495254
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7e6de3b09d85646e08bb5bfd264828b0
+  m_EffectName: Echo
+  m_MixLevel: 2d97e608c4fd649379dc3141db7beec7
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: abd3431ca00ca41b9a3a3f1df21cf449
+  - m_ParameterName: Decay
+    m_GUID: 5d5a16db1d8c247fa944d34eec9f854f
+  - m_ParameterName: Max channels
+    m_GUID: 89f49157f1d644568b949fa8d2215259
+  - m_ParameterName: Drymix
+    m_GUID: 0e5058d22352c4ece95d466412af9419
+  - m_ParameterName: Wetmix
+    m_GUID: ae1dc6886b4c5463e81aba6c79eff0e9
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24496998
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 06972e85d2ec24800ac2f782f74b8ac6
+  m_EffectName: Compressor
+  m_MixLevel: 4e6bb0afb2b8c4d69855e81bd0a3ba1c
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 806e7c1e7931b40d48cfc107870ee75f
+  - m_ParameterName: Attack
+    m_GUID: ebe20843c85904b7eac844574bfab769
+  - m_ParameterName: Release
+    m_GUID: 26460acff3e2643129436a6ce8254141
+  - m_ParameterName: Make up gain
+    m_GUID: 21072273185304f559eeb0660cf85b11
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!245 &24500003
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
@@ -191,6 +279,8 @@ AudioMixerSnapshotController:
   m_SnapshotID: 923865610caa943baa880bdd0c7386f5
   m_FloatValues:
     3181faf22fe7c0340b6fee7e7fabf1f4: -80
+    83038374d449d481dbd2cbf30b378a7c: -5181
+    6e5de6d9a3c384bf88ba57975b1c9024: -2350
     7d8b3cfc2108bba4ab20496015fe0370: -80
     afbd256e68d9342808ce76f8407ed779: -80
     2e092b9ee2c7f80469efdb5c45d08d6f: -80
@@ -237,8 +327,10 @@ AudioMixerSnapshotController:
   m_SnapshotID: 7bb6959efa6de7440afe1f2a707d5867
   m_FloatValues:
     66aceee2d1606478ba4068eda91895a8: -80
+    3181faf22fe7c0340b6fee7e7fabf1f4: -80
     7d8b3cfc2108bba4ab20496015fe0370: -80
+    806e7c1e7931b40d48cfc107870ee75f: -19.6000004
     afbd256e68d9342808ce76f8407ed779: -3
     2e092b9ee2c7f80469efdb5c45d08d6f: 0
-    0a5d564f127164a4ebd9e6f18035421c: -6
+    0a5d564f127164a4ebd9e6f18035421c: -18
   m_TransitionOverrides: {}

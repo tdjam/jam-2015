@@ -4084,7 +4084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
@@ -4519,8 +4519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMixer: {fileID: 24100000, guid: 4c6a9c010dcd344f9b663e17c29e0a58, type: 2}
-  horizontalPitch: {fileID: 8300000, guid: 60cc422c21c4ba94dbdd18f2543a82bf, type: 3}
-  verticalPitch: {fileID: 8300000, guid: 9dac980924104e64d9e9a0d0dc349d8b, type: 3}
+  horizontalPitch: {fileID: 8300000, guid: 4070e46b3b6ca4baa97a1e4eb7436c23, type: 3}
+  verticalPitch: {fileID: 8300000, guid: 258875ca57ace4b5f815ce36f59e9978, type: 3}
   minPanRange: -50
   maxPanRange: 50
 --- !u!1001 &1670573260
@@ -4809,6 +4809,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11438236, guid: 83dfad7e4c84841dca6db9ad1923883a,
         type: 2}
+    - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
+      propertyPath: newWave
+      value: 
+      objectReference: {fileID: 8300000, guid: d4434ee99990e4c3ab5924807492aacc, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
   m_IsPrefabParent: 0
@@ -5149,6 +5153,80 @@ Transform:
   - {fileID: 2137648250}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1918609314 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 162174, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
+  m_PrefabInternal: {fileID: 1718914956}
+--- !u!82 &1918609318
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918609314}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24344132, guid: 4c6a9c010dcd344f9b663e17c29e0a58,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: d4434ee99990e4c3ab5924807492aacc, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1921388523
 Prefab:
   m_ObjectHideFlags: 0

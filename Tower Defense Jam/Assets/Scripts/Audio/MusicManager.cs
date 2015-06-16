@@ -35,6 +35,7 @@ namespace Music {
 				audioPrefab.loop = t.loop;
 				audioPrefab.playOnAwake = false;
 				audioPrefab.clip = t.clip;
+				audioPrefab.volume = 0.5f;
 
 				if (mainMixer.FindMatchingGroups(t.mixerGroup).Length > 0)
 					audioPrefab.outputAudioMixerGroup = mainMixer.FindMatchingGroups(t.mixerGroup)[0];

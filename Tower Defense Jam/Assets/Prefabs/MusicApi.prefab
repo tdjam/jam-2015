@@ -43,15 +43,15 @@ MonoBehaviour:
   defaultAutoPlayId: 
   tracks:
   - id: Title
-    clip: {fileID: 8300000, guid: dc5d908cce8f14233b27fb4b4ea7fcf7, type: 3}
+    clip: {fileID: 8300000, guid: 64319b489e45141e5b0019e7740eb35a, type: 3}
     mixerGroup: Title
     loop: 1
     playOnAwake: 1
   - id: Game
-    clip: {fileID: 8300000, guid: dd5e0d5256bee8446a2e982ba8ea959b, type: 3}
+    clip: {fileID: 8300000, guid: 64319b489e45141e5b0019e7740eb35a, type: 3}
     mixerGroup: Game
     loop: 1
-    playOnAwake: 0
+    playOnAwake: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -83,7 +83,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: dc5d908cce8f14233b27fb4b4ea7fcf7, type: 3}
+      objectReference: {fileID: 8300000, guid: 64319b489e45141e5b0019e7740eb35a, type: 3}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[0].mixerGroup
       value: Title
@@ -102,12 +102,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[1].playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: tracks.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: dd5e0d5256bee8446a2e982ba8ea959b, type: 3}
+      objectReference: {fileID: 8300000, guid: 64319b489e45141e5b0019e7740eb35a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131840}
