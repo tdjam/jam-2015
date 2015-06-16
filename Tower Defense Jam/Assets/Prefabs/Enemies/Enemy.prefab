@@ -1463,9 +1463,9 @@ MonoBehaviour:
   fsm:
     usedInTemplate: {fileID: 0}
     name: Destroy Self
-    startState: Dealy
+    startState: Delay
     states:
-    - name: Dealy
+    - name: Delay
       description: 
       colorIndex: 0
       position:
