@@ -280,6 +280,10 @@ Prefab:
       propertyPath: m_Name
       value: Tower (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 121098, guid: a11500c1e431f43c2be15a03ac64faea, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a11500c1e431f43c2be15a03ac64faea, type: 2}
   m_IsPrefabParent: 0
@@ -4122,7 +4126,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409540, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
+      propertyPath: m_Name
+      value: _Loader
+      objectReference: {fileID: 0}
+    - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
@@ -4658,7 +4670,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483302, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11412940, guid: 3709db0037a0344a480c38d89a3403b1, type: 2}
       propertyPath: debug
