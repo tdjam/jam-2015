@@ -6,17 +6,12 @@ public class Loader : MonoBehaviour {
 
 	void Awake () {
 
-		if (!GameObject.Find("_Shared")) {
+		GameObject shared = new GameObject();
+		shared.name = "_Shared";
 
-			GameObject shared = new GameObject();
-			shared.name = "_Shared";
-			DontDestroyOnLoad(shared.transform.gameObject);
-			
-			foreach (GameObject go in preload) {
-				GameObject clone = Instantiate(go) as GameObject;
-				clone.transform.SetParent(shared.transform);
-			}
-
+		foreach (GameObject go in preload) {
+			GameObject clone = Instantiate(go) as GameObject;
+			clone.transform.SetParent(shared.transform);
 		}
 
 	}

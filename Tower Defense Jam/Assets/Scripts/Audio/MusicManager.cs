@@ -63,7 +63,7 @@ namespace Music {
 		}
 
 		//Stop all tracks in a particular group OR stop all tracks in all groups EXCEPT the defined group
-		public void StopAudioGroup (string group, float delay, bool stopAllExceptDefinedGroup) {
+		public void StopAudioGroup (string group, float delay, bool stopAllExceptDefinedGroup = false) {
 			GameObject.Find("_Shared/MusicApi(Clone)").GetComponent<MusicManager>().StartCoroutine (StopAudioLoop (group, delay, stopAllExceptDefinedGroup));
 		}
 
@@ -95,6 +95,13 @@ namespace Music {
 		//Allows you to stop an individual track
 		public void StopTrack(string track) {
 			this.transform.FindChild(track).gameObject.GetComponent<AudioSource>().Stop();
+		}
+
+		public void StartGame() {
+
+			transitionAudioSnapshot("TitleFade", 1f);
+			StopAudioGroup("Title", 1f);
+
 		}
 
 	}

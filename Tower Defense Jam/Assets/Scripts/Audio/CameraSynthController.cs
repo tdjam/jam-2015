@@ -99,7 +99,7 @@ public class CameraSynthController : MonoBehaviour {
 		if (isZoomingOrPanning) {
 			mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("CameraSynth")}, new float[] {1f}, 0.5f);
 		} else {
-			mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Game")}, new float[] {1f}, 2f);
+			mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Game")}, new float[] {1f}, 1f);
 		}
 
 	}

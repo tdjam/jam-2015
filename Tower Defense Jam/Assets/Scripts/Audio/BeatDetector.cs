@@ -52,6 +52,7 @@ public class BeatDetector : MonoBehaviour {
 
 		if (e > threshold) { // now we check if we have a beat
 			StartCoroutine (ChangeColor ());
+			//Do something here
 		}
 		
 //		Debug.Log ("Avg local: " + E);
