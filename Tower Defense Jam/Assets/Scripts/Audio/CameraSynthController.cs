@@ -96,10 +96,15 @@ public class CameraSynthController : MonoBehaviour {
 		}
 
 		//Check if either of the above conditionals is true
-		if (isZoomingOrPanning) {
-			mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("CameraSynth")}, new float[] {1f}, 0.5f);
-		} else {
-			mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Game")}, new float[] {1f}, 1f);
+
+		if (!Cannon.CannonManager.wubbing) {
+
+			if (isZoomingOrPanning) {
+				mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("CameraSynth")}, new float[] {1f}, 0.5f);
+			} else {
+				mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Game")}, new float[] {1f}, 1f);
+			}
+
 		}
 
 	}

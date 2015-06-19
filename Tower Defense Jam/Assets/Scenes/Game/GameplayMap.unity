@@ -1254,7 +1254,7 @@ Transform:
   m_Children:
   - {fileID: 1258608085}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &481730722
 Prefab:
   m_ObjectHideFlags: 0
@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewOnGUI: 1
   enableGUILayout: 1
-  drawStateLabels: 0
+  drawStateLabels: 1
   GUITextureStateLabels: 1
   GUITextStateLabels: 1
   filterLabelsWithDistance: 0
@@ -4126,15 +4126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409540, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
-      propertyPath: m_Name
-      value: _Loader
-      objectReference: {fileID: 0}
-    - target: {fileID: 191634, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a9f89725f24540cd8602c04aa4e9938, type: 2}

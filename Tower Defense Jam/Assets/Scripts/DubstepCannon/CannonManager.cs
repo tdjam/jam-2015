@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Combat;
+using UnityEngine.Audio;
 
 namespace Cannon {
 	public class CannonManager : MonoBehaviour {
@@ -19,6 +20,15 @@ namespace Cannon {
 		[Tooltip("Cannon GUI that should be generated and attached at run-time")]
 		[SerializeField] GameObject cannonGuiPrefab;
 		CannonGuiManager cannonGui;
+
+		public AudioClip cannonFireSuccess;
+		public AudioClip cannonNotCharged;
+		public AudioMixer mainMixer;
+		public bool disableWub;
+
+		public static bool wubbing;
+
+		AudioSource audio;
 		
 		void Awake () {
 			Sm.cannon = this;
@@ -26,6 +36,7 @@ namespace Cannon {
 			stats = GetComponent<Stats>();
 			aimer = GetComponent<CannonAimer>();
 			laser = GetComponent<CannonLaser>();
+			audio = GetComponent<AudioSource>();
 
 			// Setup the stats
 			cannonGui = Instantiate(cannonGuiPrefab).GetComponent<CannonGuiManager>();
@@ -41,14 +52,19 @@ namespace Cannon {
 		}
 
 		public void FireCannon () {
-			if (stats.charge.IsFull()) {
+			if (stats.charge.IsFull ()) {
 				stats.charge.Charge = 0;
+
+				audio.PlayOneShot(cannonFireSuccess);
 
 				if (debug) {
 					stats.charge.Charge = stats.charge.ChargeMax;
 				} 
 
-				StartCoroutine(CannonFireLoop());
+
+				StartCoroutine (CannonFireLoop ());
+			} else {
+				audio.PlayOneShot(cannonNotCharged);
 			}
 		}
 		
@@ -56,6 +72,11 @@ namespace Cannon {
 			laser.FireLaser();
 			float timer = laserDuration;
 			Stats targetStats = null;
+
+			wubbing = true;
+
+			if (!disableWub)
+				mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Wub")}, new float[] {1f}, 0.5f);
 
 			while (timer > 0f) {
 				if (targetStats == null || targetStats.health.IsDead()) {
@@ -70,8 +91,14 @@ namespace Cannon {
 				yield return null;
 			}
 
+			if (!disableWub)
+				mainMixer.TransitionToSnapshots (new AudioMixerSnapshot[] {mainMixer.FindSnapshot ("Game")}, new float[] {1f}, 0.5f);
+
+			wubbing = false;
 			aimer.aimTarget = null;
 			laser.StopLaser();
+
+
 		}
 
 		void Update () {
